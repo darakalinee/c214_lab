@@ -1,4 +1,4 @@
-# C214 - Framework Teste de Unidade com Pytest
+# C214 - Framework Teste de Unidade com Flutter
 
 ## Dart
 O Dart é uma linguagem criada para o desenvolvimento das aplicações. O Flutter é a ferramenta que utiliza essa linguagem, tornando possível o desenvolvimento de aplicações móveis. Logo, o Dart funciona sem o Flutter, mas o Flutter não funciona sem o Dart. 
