@@ -18,7 +18,7 @@ void main() {
 
   test('Calcular novo salario com porcentagem', () {
     const aumento = 100.0;
-    const valorComAumento = salario + aumento;
+    const valorComAumento = salario + (aumento * salario / 100);
     expect(
         calcularNovoSalario(salario, aumento, true), equals(valorComAumento));
   });
