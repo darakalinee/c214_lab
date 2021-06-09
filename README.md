@@ -5,7 +5,7 @@
 ## Ferramentas utilizadas:
 
 ### Flutter
-O Flutter é um framework desenvolvido pela Google que funciona com a linguagem Dart, ele permite o desenvolvimento de aplicações híbridas (tanto para Android quanto para iOS) a partir da composição de Widgets. Podemos utilizar blocos prontos desenvolvidos pela equipe do Google, como botões, cards, menus e muitos outros, para agilizar o desenvolvimento, mas também podemos personalizar e/ou criar Widgets livremente.
+O [Flutter](https://flutter.dev/docs) é um framework desenvolvido pela Google que funciona com a linguagem Dart, ele permite o desenvolvimento de aplicações híbridas (tanto para Android quanto para iOS) a partir da composição de Widgets. Podemos utilizar blocos prontos desenvolvidos pela equipe do Google, como botões, cards, menus e muitos outros, para agilizar o desenvolvimento, mas também podemos personalizar e/ou criar Widgets livremente.
 
 Para realizarmos os testes de unidade, utilizamos a bliblioteca [Test](https://pub.dev/packages/test) 
 
