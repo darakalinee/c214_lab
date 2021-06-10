@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() async {
+void main() {
   runApp(MaterialApp(
     home: Home(),
     theme: ThemeData(hintColor: Colors.amber, primaryColor: Colors.white),
@@ -13,88 +13,146 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final realController = TextEditingController();
-  final dolarController = TextEditingController();
-  final euroController = TextEditingController();
+  final salarioController = TextEditingController();
+  final aumentoController = TextEditingController();
+  final novoSalController = TextEditingController();
 
-  double dolar;
-  double euro;
+  double doubleSalario, doubleAumento;
 
   void _clearAll() {
-    realController.text = "";
-    dolarController.text = "";
-    euroController.text = "";
+    salarioController.text = "";
+    aumentoController.text = "";
+    novoSalController.text = "";
   }
 
-  void _realChanged(String text) {
-    if (text.isEmpty) {
+  _aumentoNormal() {
+    if (salarioController.text.isEmpty || aumentoController.text.isEmpty) {
       _clearAll();
       return;
     }
-    double real = double.parse(text);
-    dolarController.text = (real / dolar).toStringAsFixed(2);
-    euroController.text = (real / euro).toStringAsFixed(2);
+    doubleSalario = double.parse(salarioController.text);
+    doubleAumento = double.parse(aumentoController.text);
+    novoSalController.text =
+        ((doubleSalario + doubleAumento).toStringAsFixed(2));
   }
 
-  void _dolarChanged(String text) {
-    if (text.isEmpty) {
+  _aumentoPorcentagem() {
+    if (salarioController.text.isEmpty || aumentoController.text.isEmpty) {
       _clearAll();
       return;
     }
-    double dolar = double.parse(text);
-    realController.text = (dolar * this.dolar).toStringAsFixed(2);
-    euroController.text = (dolar * this.dolar / euro).toStringAsFixed(2);
-  }
-
-  void _euroChanged(String text) {
-    if (text.isEmpty) {
-      _clearAll();
-      return;
-    }
-    double euro = double.parse(text);
-    realController.text = (euro * this.euro).toStringAsFixed(2);
-    dolarController.text = (euro * this.euro / dolar).toStringAsFixed(2);
+    doubleSalario = double.parse(salarioController.text);
+    doubleAumento = double.parse(aumentoController.text);
+    novoSalController.text =
+        (doubleSalario + (doubleSalario * doubleAumento / 100))
+            .toStringAsFixed(2);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Calculator",
-            style: TextStyle(fontSize: 24),
-          ),
-          backgroundColor: Colors.amber,
-          centerTitle: true,
+      appBar: AppBar(
+        title: Text(
+          "Calculator",
+          style: TextStyle(fontSize: 24),
         ),
-        body: SingleChildScrollView(
+        backgroundColor: Colors.amber,
+        centerTitle: true,
+      ),
+      body: Container(
+        padding: EdgeInsets.fromLTRB(12, 10, 12, 0),
+        child: SingleChildScrollView(
           padding: EdgeInsets.all(10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Icon(Icons.attach_money, size: 150.0, color: Colors.amber),
-              buildTextField("Reais", "R\$", realController, _realChanged),
-              Divider(),
-              buildTextField("Dólares", "US\$", dolarController, _dolarChanged),
-              Divider(),
-              buildTextField("Euros", "€", euroController, _euroChanged),
+              Icon(Icons.attach_money, size: 120.0, color: Colors.amber),
+              SizedBox(
+                height: 8,
+              ),
+              buildTextField("Salário", "R\$ ", salarioController),
+              SizedBox(
+                height: 12,
+              ),
+              buildTextField("Aumento", "", aumentoController),
+              SizedBox(
+                height: 12,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    height: 40,
+                    width: 150,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Colors.amber),
+                      onPressed: () {
+                        _aumentoNormal();
+                      },
+                      child: Text(
+                        "Normal",
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                    width: 150,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Colors.amber),
+                      onPressed: () {
+                        _aumentoPorcentagem();
+                      },
+                      child: Text(
+                        "Porcentagem",
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              buildTextField("Novo Salário", "R\$ ", novoSalController),
+              SizedBox(
+                height: 12,
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: SizedBox(
+                  height: 40,
+                  width: 150,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.amber),
+                    onPressed: () {
+                      _clearAll();
+                    },
+                    child: Text(
+                      "Limpar",
+                      style: TextStyle(color: Colors.black, fontSize: 16),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 
-Widget buildTextField(
-    String label, String prefix, TextEditingController c, Function f) {
+Widget buildTextField(String label, String prefix, TextEditingController c) {
   return TextField(
     controller: c,
     decoration: InputDecoration(
-        labelText: label,
-        labelStyle: TextStyle(color: Colors.amber),
-        border: OutlineInputBorder(),
-        prefixText: prefix),
-    style: TextStyle(color: Colors.amber, fontSize: 25.0),
-    onChanged: f,
+      labelText: label,
+      labelStyle: TextStyle(color: Colors.amber),
+      border: OutlineInputBorder(),
+      prefixText: prefix,
+    ),
+    style: TextStyle(color: Colors.amber, fontSize: 22.0),
     keyboardType: TextInputType.numberWithOptions(decimal: true),
   );
 }
