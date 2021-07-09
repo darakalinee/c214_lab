@@ -1,3 +1,6 @@
+[![Dart CI](https://github.com/darakalinee/c214_lab/actions/workflows/dart.yml/badge.svg)](https://github.com/darakalinee/c214_lab/actions/workflows/dart.yml)
+
+
 # Calculator
 
 ### Aplicativo desenvolvido para a disciplina de Engenharia de Software do Inatel, com intuito de demonstrar algumas ferramentas para testes e versionamento.
