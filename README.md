@@ -6,7 +6,7 @@
 ### Aplicativo desenvolvido para a disciplina de Engenharia de Software do Inatel, com intuito de demonstrar algumas ferramentas para testes e versionamento.
 
 
-🎯 ### Funcionalidades
+## 🎯 Funcionalidades
 O Aplicativo Calculator serve para calcular o salário do funcionário e a bonificação caso necessária
 
 ## ⚒️ Ferramentas
@@ -27,12 +27,12 @@ Ele é gratuito e open source, com seu código disponibilizado no GitHub, e isso
 ## 📚 Bibliotecas
 [Test](https://pub.dev/packages/test)
 
-A biblioteca [Test](https://pub.dev/packages/test) fornece uma maneira padrão de escrever e executar testes no Dart e nos permite realizar os testes de unidade.
+A biblioteca Test fornece uma maneira padrão de escrever e executar testes no Dart e nos permite realizar os testes de unidade.
 
 
 [Path Provider](https://pub.dev/packages/path_provider)
 
-[Path Provider](https://pub.dev/packages/path_provider) é um plugin Flutter para encontrar locais comumente usados no sistema de arquivos. Suporta iOS, Android, Linux e MacOS. Nem todos os métodos são suportados em todas as plataformas.
+Path Provider é um plugin Flutter para encontrar locais comumente usados no sistema de arquivos. Suporta iOS, Android, Linux e MacOS. Nem todos os métodos são suportados em todas as plataformas.
 
 
 # 📲 Como utilizar?
@@ -55,17 +55,18 @@ Clone este repositório na sua máquina local
 $ git clone https://github.com/darakalinee/c214_lab
 
 ### Executar no terminal do Visual Studio 
-$ flutter pub get - para instalar as dependências (gerenciador de dependências)
-$ flutter run - para inicializar a aplicação
+- $ flutter pub get - para instalar as dependências (gerenciador de dependências)
+- $ flutter run - para inicializar a aplicação
 
 ## ▶️ Via APK
 
 Requisitos: 
 
 - Dispositivo Android (SDK mínimo 16)
-- Conexão via USB
+- Conexão via USB ou emulação
+- Dispositivo em modo desenvolvedor
 
 ## Passos
 - Conecte o dispositivo Android no USB do seu computador.
-- Entre na pasta na onde se econtra a aplicação.
+- Entre na pasta na onde se encontra a aplicação.
 - Rode o comando flutter install.
