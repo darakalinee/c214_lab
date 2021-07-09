@@ -26,16 +26,46 @@ Ele é gratuito e open source, com seu código disponibilizado no GitHub, e isso
 
 ## 📚 Bibliotecas
 [Test](https://pub.dev/packages/test)
+
+A biblioteca [Test](https://pub.dev/packages/test) fornece uma maneira padrão de escrever e executar testes no Dart e nos permite realizar os testes de unidade.
+
+
 [Path Provider](https://pub.dev/packages/path_provider)
+
+[Path Provider](https://pub.dev/packages/path_provider) é um plugin Flutter para encontrar locais comumente usados no sistema de arquivos. Suporta iOS, Android, Linux e MacOS. Nem todos os métodos são suportados em todas as plataformas.
+
 
 # 📲 Como utilizar?
 ## ▶️ Via código fonte
-Requisitos
-Visual studio code
-Flutter SDK
-Java JDK (Versão 8)
-Android SDK
+### Requisitos:
 
-## Verificação
+- Visual studio code
+- Flutter SDK
+- Java JDK (Versão 8)
+- Android SDK
+
+### Verificação
 Para verificar se tudo está configurado corretamente, rode o seguinte comando:
+
 $ flutter doc
+
+### Clone
+Clone este repositório na sua máquina local
+
+$ git clone https://github.com/darakalinee/c214_lab
+
+### Executar no terminal do Visual Studio 
+$ flutter pub get - para instalar as dependências (gerenciador de dependências)
+$ flutter run - para inicializar a aplicação
+
+## ▶️ Via APK
+
+Requisitos: 
+
+- Dispositivo Android (SDK mínimo 16)
+- Conexão via USB
+
+## Passos
+- Conecte o dispositivo Android no USB do seu computador.
+- Entre na pasta na onde se econtra a aplicação.
+- Rode o comando flutter install.
