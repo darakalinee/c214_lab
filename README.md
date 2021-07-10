@@ -39,7 +39,6 @@ Path Provider é um plugin Flutter para encontrar locais comumente usados no sis
 ## ▶️ Via código fonte
 ### Requisitos:
 
-- Visual studio code
 - Flutter SDK
 - Java JDK (Versão 8)
 - Android SDK
@@ -47,7 +46,7 @@ Path Provider é um plugin Flutter para encontrar locais comumente usados no sis
 ### Verificação
 Para verificar se tudo está configurado corretamente, rode o seguinte comando:
 
-$ flutter doc
+$ flutter doctor
 
 ### Clone
 Clone este repositório na sua máquina local
